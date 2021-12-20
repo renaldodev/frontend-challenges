@@ -1,14 +1,15 @@
-import { BoxGeometryProps, Color,Euler } from "@react-three/fiber";
-
+import { BoxGeometryProps, Color,Euler,useLoader } from "@react-three/fiber";
+import {TextureLoader} from 'three/src/loaders/TextureLoader'
+import waterDropsGlass from '../images/water-drops-glass.jpg'
 interface IBoxProps extends BoxGeometryProps {
-  color?: Color;
   rotation?:Euler
 }
 
-export function Box({args,color,rotation}:IBoxProps){
+export function Box({args,rotation}:IBoxProps){
+    const mapMatirial=useLoader(TextureLoader,waterDropsGlass)
     return <mesh rotation={rotation}>
         <boxBufferGeometry args={args} />
-        <meshLambertMaterial color={color?color:'blue'}/>
+        <meshStandardMaterial map={mapMatirial}/>
     </mesh>
 }
 
