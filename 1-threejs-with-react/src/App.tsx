@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import AnimatedPanel from './components/Animated'
 
 function App() {
   return (
-        <div>Ola mundo</div>
+        <div id="canvas-parent" style={{width:'100vw',height:'100vh'}}>
+          <AnimatedPanel/>
+        </div>
   )
 }
 
