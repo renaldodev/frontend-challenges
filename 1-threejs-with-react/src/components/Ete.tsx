@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 
@@ -19,13 +19,10 @@ type GLTFResult = GLTF & {
   }
 }
 
-type ActionName = 'mixamo.com'
-type GLTFActions = Record<ActionName, THREE.AnimationAction>
-
 export default function Model({ ...props }: JSX.IntrinsicElements['group']) {
 
   const group = useRef<THREE.Group>()
-  const { nodes, materials, animations } = useGLTF('/ete.gltf') as GLTFResult
+  const { nodes, animations } = useGLTF('/ete.gltf') as GLTFResult
   const { actions} = useAnimations(animations, group)
   useEffect(() => {
     actions['mixamo.com']?.play()
