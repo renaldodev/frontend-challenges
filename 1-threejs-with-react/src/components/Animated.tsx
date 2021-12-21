@@ -8,7 +8,7 @@ import Ete from './Ete'
 
 export default function AnimatedPanel() {
   return (
-    <> 7410
+    <>
       <div className="canvas-title">
           <h3>Simple form with testure</h3>
       </div>
