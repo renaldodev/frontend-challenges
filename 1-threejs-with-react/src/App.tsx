@@ -1,13 +1,13 @@
-import AnimatedPanel from './components/Animated'
+import {BrowserRouter,Routes,Route,} from 'react-router-dom'
+import Home from './pages/Home'
 
 function App() {
   return (
-        <div className="canvas-parent">
-          <div className='info'>
-            <h1>A simple project with treejs and OrbitControls</h1>
-          </div>
-          <AnimatedPanel/>
-        </div>
+        <BrowserRouter>
+         <Routes>
+           <Route path='/' element={Home}/>
+         </Routes>
+        </BrowserRouter>
   )
 }
 

@@ -65,7 +65,7 @@ export default function AnimatedPanel() {
           color={"white"}
           position={[-2, 5, 2]}
         />
-        <Suspense fallback={null}>
+        <Suspense fallback={()=>(<div>Loading...</div>)}>
           <Ete/>
         </Suspense>
       </Canvas>
