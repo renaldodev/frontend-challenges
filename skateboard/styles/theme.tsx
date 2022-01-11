@@ -1,4 +1,5 @@
-export const theme = {
+import { DefaultTheme } from "styled-components";
+export const theme: DefaultTheme = {
   font: '"Inter", sans-serif',
   bgColor: "#1f1d2b",
   bodyColor: "#808191",
